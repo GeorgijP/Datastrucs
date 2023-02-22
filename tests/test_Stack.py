@@ -13,3 +13,9 @@ class TestStack(unittest.TestCase):
         self.assertEqual(item.top.next.data, 'data2')
         self.assertEqual(item.top.next.next.data, 'data1')
         self.assertEqual(item.top.next.next.next_node, None)
+
+    def test_pop(self):
+        self.assertEqual(item.pop(), 'data3')
+        self.assertEqual(item.pop(), 'data2')
+        self.assertEqual(item.pop(), 'data1')
+        self.assertEqual(item.pop(), None)
