@@ -11,7 +11,21 @@ class Stack:
         self.top = top
 
     def push(self, data):
-        """ Тут добавление элемента """
-        new_node = Node(data)
-        new_node.next = self.top
-        self.top = new_node
+        """
+        Тут добавление элемента
+        """
+        self.new_node = Node(data)
+        self.new_node.next = self.top
+        self.top = self.new_node
+
+    def pop(self):
+        """
+        Удаляет последний элемент (LIFO)
+        """
+        if self.top == None:
+            return None
+        else:
+            self.pop_node = self.top
+            self.top = self.pop_node.next
+            self.pop_node.next = None
+            return self.pop_node.data
