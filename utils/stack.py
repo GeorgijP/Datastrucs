@@ -19,14 +19,12 @@ class Queue:
             self.tail.next_node = new_node
             self.tail = new_node
 
-
-queue = Queue()
-queue.enqueue('data1')
-queue.enqueue('data2')
-queue.enqueue('data3')
-
-print(queue.head.data)
-print(queue.head.next_node.data)
-print(queue.tail.data)
-print(queue.tail.next_node)
-print(queue.tail.next_node.data)
+    def dequeue(self):
+        """Удаляет элемент, который добавили первым"""
+        if self.head is None:
+            return None
+        data = self.head.data
+        if self.head == self.tail:
+            self.tail = None
+        self.head = self.head.next_node
+        return data
