@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-import pytest
->>>>>>> origin/develop
 from utils.utils import Stack
 
 stack = Stack()
